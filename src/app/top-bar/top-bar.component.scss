@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  align-items: center;
+  height: 125px;
+}
+
+app-search-bar {
+}
+
+.header-title-bright{
+  flex-grow: 1;
+  height: 40px;
+
+  span{
+    color:#2E3F58;
+
+    font-weight: bold;
+    font-size:32px;
+  }
+}
+
+.header-menu{
+  max-width: 1.75rem;
+  max-height: 1.25rem;
+  margin-left: 2rem;
+}
