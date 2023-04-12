@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"main-frame-panel.component.css"}
+{"version":3,"sourceRoot":"","sources":["main-frame-panel.component.scss"],"names":[],"mappings":"AAAA;EACE;EACE;EACA;EACA;EACA;EACA;;AACF;EACE;EACA;EACA;;AAEF;EACE;EACA;EACA;EACA;;;AAIJ;EACE;EACA;EACA;EACA;EACA;EACA;;AACA;EACE;EACA;;AAEF;EACE;EACA;EACA;EACA;;AAEF;EACE;EACA;EACA;;;AAIJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA","file":"main-frame-panel.component.css"}

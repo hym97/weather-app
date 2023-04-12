@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 import {NgOptimizedImage} from "@angular/common";
 import { MainFrameComponent } from './main-frame/main-frame.component';
 import { MainFramePanelComponent } from './main-frame-panel/main-frame-panel.component';
+import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MainFramePanelComponent } from './main-frame-panel/main-frame-panel.com
     TopBarComponent,
     SearchBarComponent,
     MainFrameComponent,
-    MainFramePanelComponent
+    MainFramePanelComponent,
+    BottomPanelComponent
   ],
     imports: [
         BrowserModule,
