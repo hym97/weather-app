@@ -1,0 +1,18 @@
+#bottom-panel-seven-day-chart{
+  .button{
+    font-size:20px;
+    line-height: 25px;
+  }
+
+  .button:not(:last-of-type)::after{
+    content:' ';
+    width: 5px;
+    height: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: #D9D9D9;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+}

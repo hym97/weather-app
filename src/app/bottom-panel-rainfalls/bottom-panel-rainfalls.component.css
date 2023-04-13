@@ -1,0 +1,37 @@
+#bottom-panel-rainfalls {
+  background-color: #D3D9E8;
+  border-radius: 20px;
+  box-shadow: 0 0 1px inset #d3d9E8, 0 4px 8px rgba(176, 188, 222, 0.8);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 100%;
+  width: 100%;
+}
+#bottom-panel-rainfalls .left-panel .title {
+  font-size: 20px;
+  line-height: 30px;
+  display: block;
+}
+#bottom-panel-rainfalls .left-panel .display {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  display: block;
+}
+#bottom-panel-rainfalls .right-panel .title {
+  font-size: 16px;
+  line-height: 24px;
+  display: block;
+}
+#bottom-panel-rainfalls .right-panel .display {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  display: block;
+}
+
+/*# sourceMappingURL=bottom-panel-rainfalls.component.css.map */

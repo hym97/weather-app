@@ -9,6 +9,10 @@ import {NgOptimizedImage} from "@angular/common";
 import { MainFrameComponent } from './main-frame/main-frame.component';
 import { MainFramePanelComponent } from './main-frame-panel/main-frame-panel.component';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
+import { BottomPanelDetailsComponent } from './bottom-panel-details/bottom-panel-details.component';
+import { BottomPanelRainfallsComponent } from './bottom-panel-rainfalls/bottom-panel-rainfalls.component';
+import { BottomPanelSevenDayForcastComponent } from './bottom-panel-seven-day-forcast/bottom-panel-seven-day-forcast.component';
+import { BottomPanelSevenDayChartComponent } from './bottom-panel-seven-day-chart/bottom-panel-seven-day-chart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
     SearchBarComponent,
     MainFrameComponent,
     MainFramePanelComponent,
-    BottomPanelComponent
+    BottomPanelComponent,
+    BottomPanelDetailsComponent,
+    BottomPanelRainfallsComponent,
+    BottomPanelSevenDayForcastComponent,
+    BottomPanelSevenDayChartComponent
   ],
     imports: [
         BrowserModule,

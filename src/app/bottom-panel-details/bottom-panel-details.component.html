@@ -1,0 +1,13 @@
+<section id="bottom-panel-details" >
+  <div  class="bottom-panel-center-item" *ngFor="let detail of details">
+    <div  class="bottom-panel-item-wrapper">
+      <img [ngSrc]="detail.iconUrl" width="32" height="32"/>
+      <div class="text-wrapper">
+        <span class="title">{{detail.name}}</span>
+        <span class="display">{{detail.display}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="vertical-divider"></div>
+</section>

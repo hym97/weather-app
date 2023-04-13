@@ -1,3 +1,25 @@
+#bottom-panel-main {
+  display: grid;
+  grid-template-columns: 465px 67px 770px;
+  grid-template-rows: 224px 46px 110px;
+  grid-auto-flow: column;
+  margin-top: 40px;
+}
 
+#item-details {
+  grid-column: 1;
+  grid-row: 1/2;
+}
+
+#item-rainfalls {
+  grid-column: 1;
+  grid-row: 3/4;
+}
+
+#item-seven-day-forcast {
+  background-color: #2E3F58;
+  grid-column: 3;
+  grid-row: 1/4;
+}
 
 /*# sourceMappingURL=bottom-panel.component.css.map */
