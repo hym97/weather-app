@@ -1,7 +1,9 @@
 #bottom-panel-seven-day-chart{
+  padding-top:20px;
   .button{
     font-size:20px;
     line-height: 25px;
+
   }
 
   .button:not(:last-of-type)::after{
@@ -15,4 +17,14 @@
     display: inline-block;
   }
 
+  .button:first-child{
+    margin-left: 40px;
+  }
+
+}
+
+.svg-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

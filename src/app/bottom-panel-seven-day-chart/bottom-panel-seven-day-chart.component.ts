@@ -36,7 +36,7 @@ const data = date.map((e,idx)=>{
 })
 export class BottomPanelSevenDayChartComponent implements OnInit{
 
-  private margin = {top: 20, right: 20, bottom: 30, left: 50};
+  private margin = {top: 20, right: 62, bottom: 30, left: 52};
   private width!: number;
   private height!: number;
   private x: any;
@@ -47,22 +47,24 @@ export class BottomPanelSevenDayChartComponent implements OnInit{
   constructor() {
     const date = Array(24).fill(1).map((e, idx) => {
       const date = new Date();
-      date.setHours(idx);
+      date.setHours(idx+1);
+      date.setMinutes(0);
+      date.setSeconds(0);
       return date
     })
     console.log(date)
     this.data = date.map((e, idx) => {
       return {date: e, value: Math.floor(Math.random() * 30)}
     });
-    this.width = 960 - this.margin.left - this.margin.right;
-    this.height = 500 - this.margin.top - this.margin.bottom;
+    this.width = 666;
+    this.height = 113;
     console.log(this.data)
   }
 
   private buildSvg(){
     this.svg =d3.select('svg')
       .append('g')
-      .attr('transform', `translate(${this.margin.left},${this.margin.top})`);
+      .attr('transform', `translate(10,20)`);
   }
 
 
@@ -71,15 +73,56 @@ export class BottomPanelSevenDayChartComponent implements OnInit{
     this.x = d3.scaleTime().range([0, this.width]);
     this.y = d3.scaleLinear().range([this.height, 0]);
     this.x.domain(d3.extent(this.data, (d:any) => d.date ));
-    this.y.domain(d3.extent(this.data, (d:any) => d.value ));
+    // this.y.domain(d3.extent(this.data, (d:any) => d.value));
+    console.log(d3.extent(this.data, (d:any) => d.value))
+    let xDomain = d3.extent(this.data, (d:any) => d.date );
+    let yDomain:any = d3.extent(this.data, (d:any) => d.value);
+    console.log(yDomain)
+    yDomain = [-5, yDomain[1]]
+    console.log(yDomain)
+
     // Configure the X Axis
-    this.svg.append('g')
+    let tickLabels = ['1am', '4am', '7am', '10am', '1pm','4pm','7pm'];
+    let xAxisGenerator = d3.axisBottom(this.x);
+    // XAxisGenerator.ticks(7);
+    xAxisGenerator.tickValues([1,4,7,10,13,16,19].map((e)=>this.data[e].date))
+    xAxisGenerator.tickFormat((d,i)=>{
+      return tickLabels[i]
+    });
+    xAxisGenerator.tickSize(0).tickPadding(20);
+
+    let xAxis= this.svg.append('g')
       .attr('transform', 'translate(0,' + this.height + ')')
-      .call(d3.axisBottom(this.x));
+      .call(xAxisGenerator);
+
+    xAxis.select('.domain')
+      .attr('color','#D3D9E8')
+      .attr('stroke-width', '1px')
+
+    xAxis.selectAll('text')
+      .attr('font-size','14px')
+      .attr('color', '#646E89')
+
+
     // Configure the Y Axis
-    this.svg.append('g')
+    let yAxisGenerator = d3.axisRight(this.y.domain(yDomain));
+    yAxisGenerator.ticks(3);
+    yAxisGenerator.tickFormat((d,i)=>`${d}°`)
+    yAxisGenerator.tickSize(0).tickPadding(10);
+
+
+    let yAxis = this.svg.append('g')
+      .attr('transform', `translate(${this.width},0)`)
       // .attr('class', 'axis axis--y')
-      .call(d3.axisLeft(this.y));
+      .call(yAxisGenerator);
+
+    yAxis.select('.domain')
+      .attr('color', '#D3D9E8')
+      .attr('stroke-width', '1px')
+
+    yAxis.selectAll('text')
+      .attr('font-size', '14px')
+      .attr('color', '#646E89')
   }
   // private addXandYAxis(){
   //   this.x = d3.scaleTime().range([0, this.width]);
@@ -106,6 +149,9 @@ export class BottomPanelSevenDayChartComponent implements OnInit{
     // Configuring line path
     this.svg.append('path')
       .datum(this.data)
+      .attr('fill', 'none')
+      .attr('stroke', '#d3d9E8')
+      .attr('stroke-width', 1)
       .attr('class', 'line')
       .attr('d', this.line);
   }
