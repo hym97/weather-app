@@ -1,9 +1,16 @@
-<div>
-  <div>
-    <span>{{timeObj.date}}</span>
-    <span>{{timeObj.day}}</span>
-    <span>{{timeObj.time}}</span>
+<div class="panel-main">
+
+  <div class="panel-left">
+    <img class="icon"
+      ngSrc="assets/cloud-raining-01.svg" alt="current weather icon"
+         height="60" width="60"/>
+
+    <span class="temperature">10&deg;</span>
+    <span class="position">Telluride,CO,USA</span>
+  </div>
+  <div class="panel-right">
+    <span class="time">{{timeObj.time}}</span>
+    <span class="date">{{timeObj.date+ ', ' + timeObj.day}}</span>
   </div>
 
 </div>
-

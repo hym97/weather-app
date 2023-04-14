@@ -2,6 +2,9 @@ header {
   display: flex;
   align-items: center;
   height: 125px;
+  padding-right: 113px;
+  padding-left: 108px;
+  width: 1512px;
 }
 
 .header-title-bright {
